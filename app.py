@@ -90,9 +90,10 @@ selected_row = grid_response['selected_rows']
 with col2:
     # Display the title and abstract of the selected paper
     if selected_row:
-        pmid = selected_row[0]['PMID']
-        title = selected_row[0]['TI']
-        abstract = selected_row[0]['AB']
+        selected_row = selected_row[0]  # Get the first selected row
+        pmid = selected_row['PMID']
+        title = selected_row['TI']
+        abstract = selected_row['AB']
 
         # Highlight "ECG" and "Electro" in the title and abstract
         def highlight_text(text):
